@@ -15,7 +15,7 @@ Nouvelle commandes :
 
 ## Séance du 27 septembre
 
-Nouvelles commandes:
+Nouvelles commandes :
 - git add - utilisée pour préparer des modifications de fichiers pour la prochaine validation (commit)
 - git commit - utilisée pour créer un instantané (commit) des modifications qui ont été ajoutées avec git add.
 - git push - utilisé pour envoyer les commits locaux vers un dépôt distant(GitHub) 
@@ -23,10 +23,20 @@ Nouvelles commandes:
 
 ## Séance du 4 octobre
 
-Nouvelles commandes:
+Nouvelles commandes :
 - git reset HEAD - utilisée pour retirer des fichiers de la zone de staging area après les avoir ajoutés avec git add
 - git reset --soft HEAD - annule le dernier commit tout en conservant les modifications dans la zone de préparation
 - git reset - réinitialise l'index à un commit spécifique tout en conservant les modifications locales dans vos fichiers de travail
 - git reset --hard - réinitialise l'index, le répertoire de travail et votre copie locale des fichiers à un commit spécifique
 
+## Séance du 11 octobre
 
+Nouvelles informations :
+- Il y a une nouvelle espace pour ajouter des devoirs sur Moodle de Sorbonne Nouvelle 
+- Espace Issues - l'outil de communication sur GitHub
+
+Nouvelles commandes :
+- git tag -a - utilisée pour ajouter des tags
+- stdin - l'entrée standard
+- stdout - la sortie standard
+- sterr - la sortie d'erreurs standard 
