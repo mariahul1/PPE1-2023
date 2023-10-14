@@ -40,3 +40,11 @@ Nouvelles commandes :
 - stdin - l'entrée standard
 - stdout - la sortie standard
 - sterr - la sortie d'erreurs standard 
+
+
+
+
+lignes a supprimer
+1
+2
+3
