@@ -37,5 +37,4 @@ data_file="$2"
 years=("2021" "2022" "2023")
 
 for year in "${years[@]}"; do
-  ./counter_entites.sh "$year" "$entity_type" "$data_file"
-done
+  ./counter_entites.sh "$year" "$entity_type" "$data_filone
