@@ -14,6 +14,8 @@ while IFS=, read -r file_year file_entity_type rest; do
     if [ "$file_year" = "$year" ] && [ "$file_entity_type" = "$entity_type" ]; then
         
         count=$((count+1))
+         else 
+        echo "Message erreur" 
     fi
 done < "$data_file"
 echo "Number of $entity_type entities for the year $year: $count"
@@ -61,6 +63,8 @@ if [ "$year" != '*' ] && [ "$month" != '*' ]; then
     filtered_data=$(awk -F, -v year="$year" -v month="$month" '$2 == year && $3 == month' "$data_file")
 else
     filtered_data=$(cat "$data_file")
+else 
+    echo "Message erreur" 
 fi
 
 places_ranking=$(echo "$filtered_data" | cut -d ',' -f 4 | sort | uniq -c | sort -nr | head -n "$number_of_places")
