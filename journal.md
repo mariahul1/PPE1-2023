@@ -40,3 +40,25 @@ Nouvelles commandes :
 - stdin - l'entrée standard
 - stdout - la sortie standard
 - sterr - la sortie d'erreurs standard 
+
+## Séance du 18 octobre
+
+Conditions possibles :
+- -f fichier - vrai si le fichier existe
+- -d dossier - vrai si le dossier existe
+- -s fichier - vrai si le fichier existe et n'est pas vide
+
+Les boucles FOR et WHILE :
+- FOR :
+    for ELEMENT in a b c
+    do
+        echo "message"
+    done
+- WHILE :
+    while [condition];
+    do  
+        echo "message";
+    done
+
+
+
