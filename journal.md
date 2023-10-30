@@ -59,6 +59,21 @@ Les boucles FOR et WHILE :
     do  
         echo "message";
     done
+    
+## Séance du 25 octobre
+
+- Le mini projet (à faire)
+	- Contenu instructions sur le mini-projet : 
+	début de la chaîne de traitement à effectuer en groupe 
+	- Ressources : 
+	slides : 05-miniprojet.pdf 
+	- script de base et fichier d'URL exercices : 
+	exercices 1 et 2 dans les slides (lecture du fichier d'URL, récupération des codes HTTP et de l'encodage de la page)
+
+- Les étapes :
+	- lecture des fichiers de données en entrée + nom du fichier en sortie
+	- (pour chacun des fichiers) lecture du fichier ligne à ligne
+
 
 
 
