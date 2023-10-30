@@ -23,4 +23,3 @@ done < "fr.txt"
 
 ## Exercice2
 ## 1. On ajoute 'status_code' avec la commande 'curl' effectuer une requête HTTP vers l'URL.
-## 2.
