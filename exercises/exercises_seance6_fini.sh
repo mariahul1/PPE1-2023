@@ -1,19 +1,9 @@
 #!/bin/bash
 
 ## Exercice1
-while read -r line;
-do
-	echo ${line};
-done < "fr.txt"
 ## Questions 
 ## 1. Dans ce cas, c'est mieux d'utiliser la boucle while au lieu de la commande cat parce que la commande cat lit l'intégralité du fichier en mémoire en une seule fois, cela pourrait poser des problèmes si le fichier est trop grand pour tenir en mémoire pendant que la boucle while lit le fichier ligne par ligne.
-## 2. En utilisant 'if' on vérifie si le fichie a une valeur et s'il existe, si les deux conditions sont remplies, on effectue la boucle while, sinon on s'arrête.
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <fr.txt>";
-    exit 1
-fi
-
-fr.txt="$1"
+## 2. En utilisant 'if' on vérifie si le fichie a une valeur et s'il existe, si la condition est remplie, on effectue la boucle while, sinon on s'arrête.
 
 if [ ! -f "fr.txt" ]; then
     echo "Le fichier fr.txt n'existe pas.";
@@ -24,7 +14,7 @@ ligne_numero=1
 
 while read -r line;
 do
-    echo "line $ligne_numero : $line";
+	echo ${ligne_numero} ${line};
     ligne_numero=$((ligne_numero + 1));
 done < "fr.txt"
 
