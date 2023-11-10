@@ -4,21 +4,28 @@
 ## 1. Dans ce cas, c'est mieux d'utiliser la boucle while au lieu de la commande cat parce que la commande cat lit l'intégralité du fichier en mémoire en une seule fois, cela pourrait poser des problèmes si le fichier est trop grand pour tenir en mémoire pendant que la boucle while lit le fichier ligne par ligne.
 ## 2. En utilisant 'if' on vérifie si le fichie a une valeur et s'il existe, si la condition est remplie, on effectue la boucle while, sinon on s'arrête.
 
-if [ ! -f "fr.txt" ]; then
-    echo "Le fichier fr.txt n'existe pas.";
-    exit 1
+if [[ $# -ne 1 ]];
+then
+	echo "On veut exactement un argument au script."
+	exit
 fi
 
-ligne_numero=1
+URLS=$1
 
-while read -r line;
+if [ ! -f $URLS ]
+then
+	echo "On attend un fichier, pas un dossier"
+	exit
+fi
+
+lineno=1
+while read -r URL
 do
-    status_code=$(curl -s -I -o /dev/null -w "%{http_code}" "fr.txt")
-    encodage=$(curl -s -I "fr.txt")
-    encodage_site=$(echo "encodage" | grep -i "Content-Type")
-	echo ${ligne_numero}    ${line}    ${status_code}   ${encodage_site};
-    ligne_numero=$((ligne_numero + 1));
-done < "fr.txt"
+	response=$(curl -s -I -L -w "%{http_code}" -o /dev/null $URL)
+	encoding=$(curl -s -I -L -w "%{content_type}" -o /dev/null $URL | grep -P -o "charset=\S+" | cut -d"=" -f2 | tail -n 1)
+	echo -e "$lineno\t$URL\t$response\t$encoding"
+	lineno=$(expr $lineno + 1)
+done < "$URLS"
 ## 3. On ajoute 'ligne_numero=1', une variable pour compter les lignes. Après qu'on affiche une ligne avec la commande 'echo', on introduit la variable ligne_numero et on ajoute '1' pour passer au numéro de ligne suivant.
 
 ## Exercice2
