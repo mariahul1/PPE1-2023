@@ -75,5 +75,37 @@ Les boucles FOR et WHILE :
 	- (pour chacun des fichiers) lecture du fichier ligne à ligne
 
 
+## Séance du 7 novembre
+
+- Le mini projet (solution du devoir):
+    #!/usr/bin/env bash 
+	URLS=$1
+	
+	lineno=1
+	while read -r URL;
+	do 
+		response=$(curl -s -I -w "%{http_code}"-o $URL) 
+		echo -e "$lineno\t$URL\t$response"
+		lineno=$(expr $lineno + 1)
+	done < $URL 
+
+Le reste se trouve sur GitHub. 
+
+Nouvelles commandes :
+- grep -o '\w*' - affiche tous les mots d'un fichier ligne par ligne
+
+HTML:
+3 types des balises:
+- Ouvrantes <balise>
+- Fermantes </balise>
+- Autofermantes ou vides <balise/>
+
+Les attributs d'une balise sont des valeurs renseignés sur la balise ouvrante ou autofermante.
+
+Les tableaux en HTML - commandes :
+- table : la balise racine du tableau
+- tr : table row, une ligne
+- th : table header, une cellule d'en-tête
+- td : table data, une cellule classique
 
 
