@@ -108,4 +108,16 @@ Les tableaux en HTML - commandes :
 - th : table header, une cellule d'en-tête
 - td : table data, une cellule classique
 
+## Séance du 14 novembre
 
+Les commandes importantes utilisées dans le devoir :
+- tr -d '[:punct:]' - supprime la ponctuation du fichier texte
+- tr '[:upper:]' '[:lower:]' - affiche tous les caractères en majuscules ou minuscules 
+- tr ' ' '\n' - remplace toutes les occurrences de l'espace (' ') par des caractères de saut de ligne ('\n') dans l'entrée.
+- tr -s '[:space:]' '\n' - transforme une séquence de caractères d'espacement (tels que l'espace et la tabulation) en un seul caractère de saut de ligne. 
+
+Nouvelles commandes : 
+- <nom du fichier> sort | uniq -c | sort -nr | less
+- <nom du fichier> sort | uniq -c | sort -nr | head -n 4
+- [[ "$TOPN" =~ ^0*[1-9][0-9]*$ ]]
+- echo 'abc' | tr 'ab' 'de' >>> dec 
